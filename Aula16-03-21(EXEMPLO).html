@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //EXEMPLOS DURANTE O ESTUDO PEDIDO
+        //FUNÇÃO FOREACH()
+        nros = []
+        let n = prompt("Informe a quantidade de nros: ")
+        for (let i=0; i<n; i++)
+            pessoas.push(prompt("Número "+(i+1)));
+        pessoas.forEach(imprimir);
+
+        function imprimir(element) {
+            document.write("<p style='color:red'>"+element+"<p>");    
+        }
+
+        //FUNÇÃO MAP()
+        nros = []
+        let n = prompt("Informe a quantidade de nros: ")
+        for (let i=0; i<n; i++)
+            nros.push(prompt("Número "+(i+1)));
+        
+        nros = nros.map(multiplicar);
+        document.write(nros);
+
+        function multiplicar(elemento) {
+            return ((elemento%2)==0)?elemento*2:elemento*3;
+        }
+
+        //FUNÇÃO FILTER()
+        nros = []
+        let n = prompt("Informe a quantidade de nros: ")
+        for (let i=0; i<n; i++)
+            nros.push(prompt("Número "+(i+1)));
+        
+        nros = nros.filter(paresPositivos);
+        document.write(nros);
+
+        function paresPositivos(elemento) {
+            return ((elemento%2)==0) && (elemento>0);
+        }
+
+        //FUNÇÃO REDUCE()
+        nros = []
+        let n = prompt("Informe a quantidade de nros: ")
+        for (let i=0; i<n; i++)
+            nros.push(prompt("Número "+(i+1)));
+        
+        nros = nros.reduce(multiplicaPares);
+        document.write(nros);
+
+        function multiplicaPares(total, valor) {
+            return ((valor%2)==0)?total*valor:total*1;
+        }
+
+        //FUNÇÃO EVERY()
+        nros = []
+        let n = prompt("Informe a quantidade de idades: ")
+        for (let i=0; i<n; i++)
+            nros.push(prompt("Idade "+(i+1)));
+        
+        nros = nros.every(maiorIdade);
+        document.write(nros);
+
+        function maiorIdade(idade) {
+            return idade>=18;
+        }
+
+        //FUNÇÃO SOME()
+        nros = []
+        let n = prompt("Informe a quantidade de idades: ")
+        for (let i=0; i<n; i++)
+            nros.push(prompt("Idade "+(i+1)));
+        
+        nros = nros.some(maiorIdade);
+        document.write(nros);
+
+        function maiorIdade(idade) {
+            return idade<18;
+        }
+
+
+        //EXEMPLOS DURANTE A AULA 
+        
+        //EXEMPLO COM O FOREACH
+        /* vet2 = [1,2,3,4];
+        function imprimir(vetor){
+            for(i=0;i<vetor.length;i++)
+                console.log(vetor[i]);
+        }
+        imprimir(vet);
+        console.log("segundo vetor:")
+        imprimir(vet2);*/
+
+        //SOLUÇAO USANDO O FOREACH PARA IMPRIMIR OS ELEMENTOS DO VETOR
+        vet = [10,20,30];
+
+        //FORMA RESUMIDA
+        vet.forEach((valor) => console.log(`${valor}`));
+
+        vet.forEach(imprimir);
+        function imprimir(valor,indice){
+            console.log(`Vetor[${indice}] = ${valor}`)
+        }
+
+        //USANDO O MAP
+        novoVet = vet.map((valor) => valor*2);
+        console.log(novoVet);
+
+        //USANDO O FILTER
+        NovoVet = vet.filter(conferir);
+        function conferir(valor){
+            return valor >=18;
+        }
+        console.log(NovoVet.length);
+
+
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

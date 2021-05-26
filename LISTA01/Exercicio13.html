@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*Proponha uma solução utilizando JavaScript para informar se todas as palavras
+        armazenadas em um vetor são palíndromos. Se forem, retorne true ou false, caso contrário.*/
+
+        let palavras1 = ["ama","ana","nawan","arara"];
+        let palavras2 = ["ama","ana","nawan","maria"];
+
+        let saoPalindromos = (vetor) => (vetor.every(valor=>valor==valor.split('').reverse().join('')));
+
+        console.log(saoPalindromos(palavras1)); 
+        console.log(saoPalindromos(palavras2));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

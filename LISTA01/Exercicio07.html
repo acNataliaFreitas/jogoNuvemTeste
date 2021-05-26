@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*Proponha uma solução utilizando JavaScript para informar (true ou false) no corpo de uma
+        página web se TODAS as idades de pessoas armazenadas em determinado vetor são maiores
+        de idade (>= 18). Sugestão: crie pelo menos três vetores com diversos valores numéricos e
+        utilize-os para testar a função.*/
+
+        let vet1 = [1,3,5,7,9];
+            let vet2 = [2,4,6,8,10,5];
+            let vet3 = [18,25,58,92,30];
+
+            let MaiorIdade = (vet) => vet.every(valor=>valor>=18);
+
+            document.write(MaiorIdade(vet1) +"<br>");
+            
+            document.write(MaiorIdade(vet2) + "<br>");
+
+            document.write(MaiorIdade(vet3)); //neste caso ele só será true se todos os valores do vet3 forem acima de 18.
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

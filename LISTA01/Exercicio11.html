@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*Proponha uma solução utilizando JavaScript para somar os valores ímpares de
+        determinado vetor. Sugestão: crie pelo menos três vetores com diversos valores numéricos e
+        utilize-os para testar a função*/
+
+        let vetor1 = [10,4,8,7,1,20];
+        let vetor2 = [0,41,13,7,1,20];
+        let vetor3 = [21,33,43,19,87];
+
+        let somaImpares = (vetor) => (vetor.filter(valor=>valor%2==1).reduce((acumulador,valor)=>acumulador+valor));
+        //let somaImpares = (vetor) => (vetor.filter(valor=>valor%2).reduce((acumulador,valor)=>acumulador+valor));
+        
+        document.write(somaImpares(vetor1)+"<br>"); // 8
+        document.write(somaImpares(vetor2)+"<br>"); // 62
+        document.write(somaImpares(vetor3)+"<br>"); // 203
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

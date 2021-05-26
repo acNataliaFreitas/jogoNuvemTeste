@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*Proponha uma solução utilizando JavaScript para imprimir no corpo de uma página web os
+        valores de determinado vetor. Os valores do vetor devem ser impressos na mesma linha e
+        separados por um traço. Sugestão: crie pelo menos três vetores com diversos valores
+        numéricos e utilize-os para testar a função. Para este exercício irei apresentar a solução
+        comentada.*/
+
+        let vet1 = [1,3,5,7,9];
+        let vet2 = [2,4,6,8,10];
+        let vet3 = [0,1,2,5,9];
+
+        let imprimir = (vet) => (vet.forEach(valor=>document.write(valor + " - ")));
+
+        imprimir(vet1);
+        document.write("<br>");
+
+        imprimir(vet2);
+        document.write("<br>");
+
+        imprimir(vet3);
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

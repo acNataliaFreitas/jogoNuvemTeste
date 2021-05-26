@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Exemplo com jQuery</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            $("#conteudo").hide();
+            $("#link_abre").click(function () {
+                $("#conteudo").slideToggle("slow");
+            });
+
+        });
+    </script>
+    <style>
+        body {
+            font-family: Verdana, Geneva, sans-serif;
+            margin: 10px;
+        }
+
+        #container {
+            width: 450px;
+            padding: 20px;
+            background-color: rgb(116, 243, 179);
+        }
+
+        #titulo {
+            padding: 10px;
+            background-color: #FFF;
+            font-weight: bold;
+            font-size: large;
+            text-align: center;
+        }
+
+        #link_abre {
+            font-weight: normal;
+            font-size: smaller;
+        }
+
+        a:link,
+        a:visited {
+            color: #000;
+            border: #a0e5d6 1px solid;
+            padding: 10px;
+            background-color: rgb(122, 224, 164);
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: black;
+            border: black 1px solid;
+            padding: 10px;
+            background-color: rgb(122, 224, 164);
+            text-decoration: none;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="container">
+        <div id="titulo">
+                <img src="img/diaIndio.jpg" alt=""> 
+
+            <a id="link_abre" href="#">Clique aqui para visualizar o texto!</a>
+        </div>
+        <div id="conteudo">
+                <p> A celebração do Dia do Índio tem como propósito também a preservação da memória e a reflexão crítica nas
+                universidades, escolas e demais instituições semelhantes sobre o passado da relação de dominação e
+                conquista das civilizações europeias no continente americano.</p>
+
+                <p> início do século XX, havia um interesse muito grande por essas etnias, sobretudo com o
+                desenvolvimento da etnologia, isto é, o ramo da antropologia que se dedica aos estudos das chamadas
+                “culturas primitivas”. O esforço pela compreensão dos hábitos e da importância dos povos indígenas para
+                história despertou a atenção também para o âmbito das políticas públicas que visassem à salvaguarda
+                desses hábitos e costumes.</p>
+
+                <p>No caso do Brasil, o Dia do Índio foi instituído via decreto-lei, em 1943, pelo então presidente Getúlio
+                Vargas, que exercia o poder de forma autoritária no chamado Estado Novo. Veja o texto do decreto-lei:</p>
+
+               <p><b> “O PRESIDENTE DA REPÚBLICA, usando da atribuição que lhe confere o artigo 180 da Constituição, e tendo
+                em vista que o Primeira Congresso Indigenista Interamericano, reunido no México, em 1940, propôs aos
+                países da América a adoção da data de 19 de abril para o "Dia do Índio",
+
+                DECRETA:
+
+                Art. 1º É considerada - "Dia do Índio" - a data de 19 de abril.
+
+                Art. 2º Revogam-se as disposições em contrário.
+
+                Rio de Janeiro, 2 de junho de 1943, 122º da Independência e 55º da República.”
+
+                GETÚLIO VARGAS </b></p>
+        </div>
+    </div>
+</body>
+
+</html>

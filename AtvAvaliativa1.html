@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table td{
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+    <script>
+        let tableTrabalhadores = [
+            { Nome: "Jose da Silva", Idade: 20, Sexo: "M", Salario: 2500.00 },
+            { Nome: "Ana Maria", Idade: 33, Sexo: "F", Salario: 5500.00 },
+            { Nome: "pedro Alcantra", Idade: 22, Sexo: "M", Salario: 1500.00 },
+            { Nome: "Maria da Silva", Idade: 55, Sexo: "F", Salario: 7500.00 },
+            { Nome: "Antonio Carlos", Idade: 45, Sexo: "M", Salario: 1000.00 },
+        ];
+
+        /*1)*/  document.write("<table><th>Nome</th><th>Idade</th><th>Sexo</th><th>Salario</th>")
+        tableTrabalhadores.forEach((pessoa) => document.write("<tr><td>" + pessoa.Nome + "</td><td>" + pessoa.Idade + "</td><td>"
+            + pessoa.Sexo + "</td><td>" + pessoa.Salario.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' }) + "<br>" + "</td>"));
+        document.write("</table>" + "<br>");
+
+        /*2)*/ let MediaSalario = tableTrabalhadores.reduce((total, valor) => total + valor.Salario, 0);
+        document.write("Media Salarial: R$" + MediaSalario / tableTrabalhadores.length + "<br><br>");
+
+
+                document.write("Nome dos trabalhadores que recebem mais de R$3.000,00:" + "<br>");
+        /*3)*/ let NomeMenor3000 = tableTrabalhadores.filter((valor) => (valor.Salario > 3000) ?
+                document.write(valor.Nome + "<br><br>") : 0);
+
+        /*4)*/   document.write("Dados dos trabalhadores do sexo Masculino:" + "<br>");
+                let NomeSexoM = tableTrabalhadores.filter((valor) => (valor.Sexo == "M") ?
+                document.write("Nome: " + valor.Nome + " Idade: " + valor.Idade + " Salario: " + valor.Salario + "<br>") : 0);
+
+
+                document.write("<br><br> Dados dos trabalhadores do sexo Feminino:" + "<br>");
+        /*5)*/  let NomeSexoF = tableTrabalhadores.filter((valor) => (valor.Sexo == "F") ?
+                    document.write("<br>" + "Nome:" + valor.Nome + " Idade: " + valor.Idade + " Salario: " + valor.Salario + "<br>") : 0);
+
+
+        /*6)*/  let NomeMaiorSalario = tableTrabalhadores.reduce((acumulador, valor) => (valor.Salario > acumulador.Salario) ? valor : acumulador);
+        document.write("<br><br>Nome do trabalhador que recebe o maior salário: " + NomeMaiorSalario.Nome + "<br>");
+
+
+        /*7)*/ let NomeMenorSalario = tableTrabalhadores.reduce((acumulador, valor) => (valor.Salario < acumulador.Salario) ? valor : acumulador);
+        document.write("<br><br> Nome do trabalhador que recebe o menor salário: " + NomeMenorSalario.Nome + "<br><br>");
+
+
+        /*8)*/  let NomeMSalario5000 = tableTrabalhadores.some((valor) => (valor.Sexo == "M" && valor.Salario > 5000)?document.write("<br>" + valor.Nome + "<br>"):
+                document.write("Nao existe trabalhador masculino que recebem acima de R$5.000,00" + "<br>"));
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

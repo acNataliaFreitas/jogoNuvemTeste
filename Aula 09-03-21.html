@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //funçao declarativa
+        function somar(x,y){
+            return x+ y;
+        }
+        console.log(somar(10,20));
+
+        //funçao literal
+        let f_literal = function somar(x,y){
+            return x+ y;
+        }
+        console.log(f_literal(10,20));
+
+        // funçao anonima
+        let f_anonima = function (x,y){
+            return x + y;
+        }
+        console.log(f_anonima(40,40));
+
+        // funçao seta (arrow function) nao precisa de return quando tem apenas uma instruçao!!
+        let f_arrow = (x,y) => x + y;
+            //return;
+        console.log(f_arrow(50,50));
+
+
+        //exercicio avaliativo durante a aula
+        //ENTRADA: numero inteiro x
+        //SAIDA: se for par, retorna x*2 senao retorna x*3
+
+        function mudar(x){
+            return (x%2==0)?x*2:x*3;
+        }
+        console.log(`RESULTADO = ${mudar(10)}`);
+
+        //funcao literal
+        let m_literal = function mudar(x){
+            return (x%2==0)?x*2:x*3;
+        }
+        console.log(`RESULTADO = ${m_literal(10)}`);
+
+        // funcao anonima
+        let m_anonima = function (x){
+            return (x%2==0)?x*2:x*3;
+        }
+        console.log(`RESULTADO = ${m_anonima(10)}`);
+
+        //funcao arrow
+        let m_seta = (x) => (x%2==0)?x*2:x*3;
+        console.log(`RESULTADO = ${m_seta(10)}`);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

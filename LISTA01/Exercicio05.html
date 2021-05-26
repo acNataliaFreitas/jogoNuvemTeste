@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*Proponha uma solução utilizando JavaScript para exibir no corpo de uma página web os
+        números ímpares armazenados em um vetor. Sugestão: crie pelo menos três vetores com
+        diversos valores numéricos e utilize-os para testar a função*/
+
+        
+        let vet1 = [1,3,5,7,9];
+        let vet2 = [2,4,6,8,10,5];
+        let vet3 = [0,1,2,5,9,30];
+
+        let impar = vet => vet.some(valor=>(valor%2==1));
+
+        document.write(impar(vet1) +"<br>");
+        
+        document.write(impar(vet2) + "<br>");
+
+        document.write(impar(vet3));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

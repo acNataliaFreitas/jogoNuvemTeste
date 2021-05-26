@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*Proponha uma solução utilizando JavaScript para, a partir da leitura de um vetor
+        contendo valores numéricos e de um intervalo [limiteInferior, limiteSuperior], informar no
+        corpo de uma página web todos os valores do vetor pertencentes ao intervalo. Sugestão: crie
+        pelo menos três vetores com diversos valores numéricos e utilize-os para testar a função.*/
+
+        let vetor1 = [10,4,8,7,1,20];
+        let limInf = 3;
+        let limSup = 10; 
+
+        let valoresIntervalo = (vetor,limInf,limiteSup) => (vetor.filter(valor=>valor>=limInf&&valor<=limSup));
+
+        document.write(valoresIntervalo(vetor1,limInf,limSup));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

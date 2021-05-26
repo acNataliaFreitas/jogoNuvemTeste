@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*Proponha uma solução utilizando JavaScript para exibir no corpo de uma página web o maior
+        valor armazenado em um vetor. Sugestão: crie pelo menos três vetores com diversos valores
+        numéricos e utilize-os para testar a função. */
+
+        let vet1 = [1,3,5,7,9];
+        let vet2 = [2,4,6,8,10];
+        let vet3 = [0,1,2,5,9,30];
+
+        let maior = (vet) => (vet.reduce((acumulador,valor)=>(valor>acumulador)?valor:acumulador));
+
+        document.write(maior(vet1) +"<br>");
+        
+        document.write(maior(vet2) + "<br>");
+
+        document.write(maior(vet3) + "<br>")
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

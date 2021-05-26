@@ -1,0 +1,5 @@
+Responsável: Natalia Freitas
+Data: 20/04/2021
+
+OBJETIVO:
+	-Diagramaçao da interface do jogo.

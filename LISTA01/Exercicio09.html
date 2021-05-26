@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*Proponha uma solução utilizando JavaScript para informar no corpo de uma página web o
+        número de elementos de um vetor que são maiores do que um valor de corte informado pelo
+        usuário. Sugestão: crie pelo menos três vetores com diversos valores numéricos e utilize-os
+        para testar a função.*/
+
+        let vetor1 = [10,4,8,7,1,20];
+        let corte1 = 0; 
+
+        let vetor2 = [0,41,13,7,1,20];
+        let corte2 = 10;
+        
+        let vetor3 = [21,33,43,19,87];
+        let corte3 = 19; 
+        let todosMaiorCorte = (vetor,corte) => (vetor.filter(valor=>valor>corte).length);
+
+        document.write(todosMaiorCorte(vetor1,corte1)+"<br>");
+        document.write(todosMaiorCorte(vetor2,corte2)+"<br>");
+        document.write(todosMaiorCorte(vetor3,corte3));
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
