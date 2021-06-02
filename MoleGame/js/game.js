@@ -7,11 +7,10 @@ var $timeGame = $initialTime;
 var $idChronoGame; //ira controlar o setInterval do cronometro
 var $idChronoStartGame; //ira controlar o setInterval do cronometro do jogo
 
-urlParams = new URLSearchParams(window.location.search);
-userId = urlParams.get('id');
+var userId = sessionStorage.getItem("id");
 console.log("Passado pela sessionStorage: " + sessionStorage.getItem("id"))
-console.log("Usuario: " + userId)
 
+var tabela_rank = ""
 
 $(document).ready(function () {
     fillBoard();
@@ -37,7 +36,7 @@ function andGame() {
     clearInterval($idChronoGame);
     clearInterval($idChronoStartGame);
     //alert(`Fim de jogo. Sua pontuaçao foi = ${("#score").text()}`)
-    alertWifi(`Fim de Jogo. Sua pontuação foi = ${$("#score").text()}`, false, 0, `img/${$imgsTheme.active}`, "50");
+    alertWifi(`Fim de Jogo. Sua pontuação foi = ${$("#score").text()}\n\n<table id='tab-rank'></table>`, false, 0, `img/${$imgsTheme.active}`, "50");    readUsers();
     readUsers();
     fillBoard();
     $("#score").text("0");
@@ -108,22 +107,29 @@ function getLevel() {
 }
 
 // CHAMA O RANKING E MOSTRA SUA PONTUAÇAO 
-function readUsers(){
-    fetch(jsonFile)
-    .then(jsonFile => jsonFile.json())
-    .then(contents =>{
-        contents.users.forEach($user => {
-            $nivel = $('#id_select').val();
-            if($user.level == $nivel){
-                $linha = $("<tr></tr>");
-                $colunaNome = $("<td></td>").text($user.username);
-                $linha.append($colunaNome);
-                $colunaScore = $("<td></td>").text($user.score);
-                $linha.append($colunaScore);
-                $("#userTable").append($linha);
-                  
-            }
-        });
-    })
-    .catch(err => console.log(err));
+function readUsers() {
+    const dados = {
+        "usuario": {
+            "id": userId
+        },
+        "pontuacao": $("#score").text(),
+        "nivel": $("#level").val()
+    }
+    console.log(dados)
+    const url = "http://localhost:8080/ranking";
+    axios.post(url, dados)
+        .then(() => axios.get(url + `/${$("#level").val()}`))
+        .then(
+            (rank) =>
+                rank.data.forEach(registro => {
+                    //console.log(registro),
+                    tabela_rank = tabela_rank +
+                        `<tr>
+                        <td>${registro.usuario.user}</td>
+                        <td>${registro.pontuacao}</td>
+                    </tr>`
+                    document.getElementById("tab-rank").innerHTML = tabela_rank
+                })
+        )
+        .catch(err => console.log(err));
 }

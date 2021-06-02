@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+    //Passo 1: usar classe ao invés de função - foi adicionado o metodo renden()
+    /*  class Time extends React.Component {
+            //return <p>Hora atual: {props.date.toLocaleTimeString()}</p>
+            render() {
+                return <p>Hora atual: {this.props.date.toLocaleTimeString()}</p>
+            }
+        }
+
+        function RealTime() {
+            const element = <Time date={new Date()}/>
+            ReactDOM.render(element, document.getElementById("root"));
+        }
+        
+        setInterval(RealTime, 1000);
+        ReactDOM.render(<ShowName/>, document.getElementById("root"));*/$
+        
+        
+        //Passo 2: implementar construtor da classe Time
+      class Time extends React.Component {
+            //return <p>Hora atual: {props.date.toLocaleTimeString()}</p>
+            //criar construtor é opcional, nao é obrigatório 
+            constructor(props){
+                super(props); 
+                
+            }
+            //obrigatorio
+            render() {
+                return <p>Hora atual: {this.props.data.toLocaleTimeString()}</p>
+            }
+        }
+
+        function RealTime() {
+            const element = <Time date={new Date()}/>
+            ReactDOM.render(element, document.getElementById("root"));
+        }
+        
+        setInterval(RealTime, 1000);
+        ReactDOM.render(<ShowName/>, document.getElementById("root"));
+
+
+    
+    </script>
+</body>
+</html>
