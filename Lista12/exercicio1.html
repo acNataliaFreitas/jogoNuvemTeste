@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+    /*Crie um componente para renderizar uma tela de LOGIN numa página web composta pelos
+    campos de usuário e senha, além de um botão para validar o formulário. O botão “Entrar”
+    deverá verificar se as informações de usuário e senha são diferentes de vazio.*/
+
+        class Login extends React.Component {
+            constructor(props){
+            super(props);
+            this.state = {username: '', pwd: ''};
+            }
+            validate = () =>{
+               if(this.state.username && this.state.pwd) alert('Login válido!');
+               else alert('Login inválido!');
+               
+            }
+
+            updateLogin = (event) =>{
+                this.setState({[event.target.name]: event.target.value});
+            }
+            render() {
+                return (
+                    <div>
+                        <h2>Login</h2>
+                        <form>
+                            <input type="text" placeholder="Usuario" name="username" value={this.state.username} onChange={this.updateLogin}/><br/>
+                            <input type="password" placeholder="Senha" name="pwd" value={this.state.pwd} onChange={this.updateLogin}/><br/>
+                            <button onClick={this.validate}>Entrar</button>
+                        </form>
+                    </div>
+                );
+            }
+        }
+        ReactDOM.render(<Login/>, document.getElementById("root"));
+    </script>
+</body>
+
+</html>

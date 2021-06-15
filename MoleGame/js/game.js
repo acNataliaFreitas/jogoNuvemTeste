@@ -2,7 +2,7 @@ const $levels = { "easy": 3, "medium": 4, "hard": 5 };
 const $imgsTheme = { "default": "../img/buracoNuvem.gif", "active": "../img/nuvem.gif", "dead": "../img/deadNuvem.gif" }
 const $imgWidth = 100; // largura da toupeira
 const $imgHeight = 80; //altura da toupeira
-const $initialTime = 30; //temp de jogabilidade independente da fase
+const $initialTime = 10; //temp de jogabilidade independente da fase
 var $timeGame = $initialTime;
 var $idChronoGame; //ira controlar o setInterval do cronometro
 var $idChronoStartGame; //ira controlar o setInterval do cronometro do jogo
@@ -54,8 +54,8 @@ function pauseGame() {
 }
 
 function btnCtrl() {
-    $("btnPause").prop("disabled", true);   //desabilitar
-    $("btnStop").prop("disabled", true);    //desabilitar 
+    $("btnPause").prop("disabled", false);   //Habilita
+    $("btnStop").prop("disabled", false);    //Habilita 
     $("btnPlay").prop("disabled", true);     //desabilita
 
 }
@@ -114,7 +114,7 @@ function readUsers() {
         },
         "pontuacao": $("#score").text(),
         "nivel": $("#level").val()
-    }
+    } //salva pontuação
     console.log(dados)
     const url = "http://localhost:8080/ranking";
     axios.post(url, dados)
@@ -129,7 +129,7 @@ function readUsers() {
                         <td>${registro.pontuacao}</td>
                     </tr>`
                     document.getElementById("tab-rank").innerHTML = tabela_rank
-                })
+                }) //imprime pontuacao e mostra para o usuario.
         )
         .catch(err => console.log(err));
 }

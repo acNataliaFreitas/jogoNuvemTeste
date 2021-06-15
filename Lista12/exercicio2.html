@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Double</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        class Double extends React.Component {
+            constructor(props){
+                super(props);
+                this.state = {value1: "",value2:"", soma:""};
+            }
+            update = (event) => this.setState({[event.target.name]: event.target.value});
+            soma = () => {
+                event.preventDefault();
+                if ((!this.state.value1) || isNaN(this.state.value1) || (!this.state.value2) || isNaN(this.state.value2)) alert("Informe um valor!");
+                else this.setState({soma: parseFloat(this.state.value1) + parseFloat(this.state.value2)});
+            }
+            render() {
+                return (
+                    <div>
+                        <h1>Calculadora</h1>
+                        <form>
+                            <input type="text" onChange={this.update} name="value1" value ={this.state.value1}/><br/>
+                            <input type="text" onChange={this.update} name="value2" value ={this.state.value2}/><br/> 
+                            <button onClick={this.soma}>Somar</button><br/>
+                            <input type="text" value={this.state.soma}/>
+                        </form>  
+                    </div>
+                );
+            }
+        }
+        ReactDOM.render(<Double/>, document.getElementById("root"));
+    </script>
+</body>
+
+</html>

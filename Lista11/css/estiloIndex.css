@@ -1,0 +1,10 @@
+ul li{
+    list-style: none;
+    text-align: center;
+    font-size: 25px;
+    
+}
+li h2{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: darkred;
+}

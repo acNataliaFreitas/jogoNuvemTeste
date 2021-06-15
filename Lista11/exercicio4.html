@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        class Product extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    pos: 0, product: [
+                        { img: "img/celular1.jpg", name: "Samsung Galaxy Z Fold 2", price: "R$10.229,00" },
+                        { img: "img/celular2.jpg", name: "Iphone 12 Pro Max", price: "R$11.438,00" },
+                        { img: "img/celular.jpg", name: "Samsung Galaxy S21", price: "R$6.974,00" }
+                    ]
+                }
+            }
+            componentDidMount() {
+                this.timeId = setInterval(() => this.slideShow(), 1000);
+            }
+            slideShow() {
+                if (this.state.pos < 2) this.setState({ pos: this.state.pos + 1 });
+                else this.setState({ pos: 0 });
+            }
+            render() {
+                const box = {
+                    width: "300px",
+                    textAlign: "center"
+                }
+                const configText = {
+                    color: "blue",
+                    fontSize: "25px"
+                };
+                return (
+                    <div style={box}>
+                        <img src={this.state.product[this.state.pos].img} alt="" />
+                        <h2>{this.state.product[this.state.pos].name}</h2>
+                        <p style={configText}>{this.state.product[this.state.pos].price}</p>
+                    </div>
+                );
+            }
+        }
+        ReactDOM.render(<Product />, document.getElementById("root"));
+    </script>
+</body>
+
+</html>
