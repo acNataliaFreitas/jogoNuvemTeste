@@ -18,28 +18,28 @@
         class Soma extends React.Component {
             constructor(props) {
                 super(props);
-                this.state = { value1: "", value2: "", soma: "", sub:"", mult:"", div:""};
+                this.state = { value1: "", value2: "",result:""};
             }
             changeNumber = (event) => this.setState({[event.target.name]: event.target.value});
             soma = () => {
                 event.preventDefault();
                 if ((!this.state.value1) || isNaN(this.state.value1) || (!this.state.value2) || isNaN(this.state.value2)) alert("Informe um valor!");
-                else this.setState({soma: parseFloat(this.state.value1) + parseFloat(this.state.value2)});
+                else this.setState({result: parseFloat(this.state.value1) + parseFloat(this.state.value2)});
             }
             sub = () => {
                 event.preventDefault();
                 if ((!this.state.value1) || isNaN(this.state.value1) || (!this.state.value2) || isNaN(this.state.value2)) alert("Informe um valor!");
-                else this.setState({sub: parseFloat(this.state.value1) - parseFloat(this.state.value2)});
+                else this.setState({result: parseFloat(this.state.value1) - parseFloat(this.state.value2)});
             }
            mult = () => {
                 event.preventDefault();
                 if ((!this.state.value1) || isNaN(this.state.value1) || (!this.state.value2) || isNaN(this.state.value2)) alert("Informe um valor!");
-                else this.setState({mult: parseFloat(this.state.value1) * parseFloat(this.state.value2)});
+                else this.setState({result: parseFloat(this.state.value1) * parseFloat(this.state.value2)});
             }
             div = () => {
                 event.preventDefault();
                 if ((!this.state.value1) || isNaN(this.state.value1) || (!this.state.value2) || isNaN(this.state.value2)) alert("Informe um valor!");
-                else this.setState({div: parseFloat(this.state.value1) / parseFloat(this.state.value2)});
+                else this.setState({result: parseFloat(this.state.value1) / parseFloat(this.state.value2)});
             }
             render() {
                 return (
@@ -57,7 +57,7 @@
                             <button onClick={this.div}>/</button>
 
                         </form>
-                        <input type="text" value={this.state.soma} value={this.state.sub} value={this.state.mult} value={this.state.div}/>
+                        <input type="text" value={this.state.result}/>
                     </div>
                 );
             }
