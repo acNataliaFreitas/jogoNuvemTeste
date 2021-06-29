@@ -36,7 +36,7 @@ function andGame() {
     clearInterval($idChronoGame);
     clearInterval($idChronoStartGame);
     //alert(`Fim de jogo. Sua pontuaçao foi = ${("#score").text()}`)
-    alertWifi(`Fim de Jogo. Sua pontuação foi = ${$("#score").text()}\n\n<table id='tab-rank'></table>`, false, 0, `img/${$imgsTheme.active}`, "50");    readUsers();
+    alertWifi(`Fim de Jogo. Sua pontuação foi = ${$("#score").text()}\n<table id='tab-rank'></table>`, false, 0, `img/${$imgsTheme.active}`, "50");
     readUsers();
     fillBoard();
     $("#score").text("0");
@@ -105,7 +105,6 @@ function getRanNumber(min, max) {
 function getLevel() {
     return $levels[$("#level").val()]
 }
-
 // CHAMA O RANKING E MOSTRA SUA PONTUAÇAO 
 function readUsers() {
     const dados = {
